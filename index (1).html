@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Taylored Media — We Make Your Brand Seen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --black:#0A0A0A;
+  --card:#141414;
+  --card2:#1E1E1E;
+  --gold:#E03030;
+  --gold-dim:#b52222;
+  --navy:#1A1A1A;
+  --red:#E03030;
+  --offwhite:#F5F5F5;
+  --text:#EDEDED;
+  --muted:#777;
+  --radius:6px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:64px;background:rgba(12,12,12,0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(201,168,76,0.15)}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--gold);letter-spacing:2px;text-decoration:none}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--black);padding:10px 22px;border-radius:var(--radius);font-size:13px;font-weight:700;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:background .2s}
+.nav-cta:hover{background:var(--gold-dim)}
+
+/* ── HERO ── */
+#home{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:120px 40px 80px;position:relative;overflow:hidden}
+.hero-eyebrow{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,9vw,130px);line-height:.95;color:#fff;margin-bottom:32px}
+.hero-h1 span{color:var(--red)}
+.hero-sub{font-size:18px;color:var(--muted);max-width:500px;margin-bottom:48px;line-height:1.7}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--black);padding:16px 36px;border-radius:var(--radius);font-size:14px;font-weight:700;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:background .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold-dim)}
+.btn-outline{border:1px solid rgba(201,168,76,0.4);color:var(--gold);padding:16px 36px;border-radius:var(--radius);font-size:14px;font-weight:600;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:all .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);background:rgba(201,168,76,0.06)}
+.hero-stats{display:flex;gap:48px;margin-top:64px;flex-wrap:wrap}
+.stat-num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--gold);line-height:1}
+.stat-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
+.hero-bg-text{position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,18vw,260px);color:rgba(201,168,76,0.03);line-height:1;pointer-events:none;user-select:none;white-space:nowrap}
+
+/* ── TICKER ── */
+.ticker-wrap{background:#111;padding:14px 0;overflow:hidden;white-space:nowrap}
+.ticker-inner{display:inline-block;animation:ticker 22s linear infinite}
+.ticker-inner span{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--offwhite);padding:0 40px}
+.ticker-inner span.dot{color:var(--gold)}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ── SECTION COMMONS ── */
+section{padding:100px 40px}
+.section-eyebrow{font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,72px);color:#fff;line-height:1;margin-bottom:20px}
+.section-sub{font-size:16px;color:var(--muted);max-width:520px;line-height:1.7;margin-bottom:56px}
+.divider{width:48px;height:3px;background:var(--gold);margin-bottom:40px}
+
+/* ── SERVICES ── */
+#services{background:var(--black)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px}
+.svc-card{background:var(--card);padding:36px 32px;position:relative;overflow:hidden;transition:background .2s}
+.svc-card:hover{background:var(--card2)}
+.svc-accent{height:3px;width:40px;margin-bottom:24px}
+.svc-icon{font-size:28px;margin-bottom:16px}
+.svc-name{font-family:'Bebas Neue',sans-serif;font-size:26px;color:#fff;letter-spacing:1px;margin-bottom:10px}
+.svc-desc{font-size:14px;color:var(--muted);line-height:1.65}
+
+/* ── ABOUT ── */
+#about{background:var(--offwhite);color:var(--black)}
+#about .section-eyebrow{color:#111}
+#about .section-title{color:var(--black)}
+#about .divider{background:var(--black)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.about-body{font-size:16px;line-height:1.9;color:#333}
+.about-body p{margin-bottom:20px}
+.about-stats{display:flex;flex-direction:column;gap:16px}
+.astat{background:var(--black);color:var(--offwhite);padding:24px 28px;border-radius:var(--radius)}
+.astat-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:var(--gold);line-height:1}
+.astat-label{font-size:13px;color:#aaa;margin-top:4px;letter-spacing:1px}
+.astat.red{background:var(--red)}
+.astat.red .astat-num{color:#fff;font-size:22px;line-height:1.2}
+.astat.red .astat-label{color:rgba(255,255,255,0.75)}
+
+/* ── PRICING ── */
+#pricing{background:#111}
+.tab-bar{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:40px;background:var(--card);padding:6px;border-radius:var(--radius);width:fit-content}
+.tab-btn{padding:10px 22px;border:none;background:transparent;color:var(--muted);font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s;font-family:'Inter',sans-serif}
+.tab-btn.active{background:var(--gold);color:var(--black)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+
+/* package cards */
+.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:48px}
+.pkg-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:var(--radius);padding:28px 24px;cursor:pointer;transition:all .25s;position:relative}
+.pkg-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.pkg-card.selected{border-color:var(--gold);background:rgba(201,168,76,0.07)}
+.pkg-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 12px;border-radius:20px;white-space:nowrap}
+.pkg-selected-badge{display:none;position:absolute;top:10px;right:10px;background:var(--gold);color:var(--black);font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.pkg-card.selected .pkg-selected-badge{display:block}
+.pkg-name{font-family:'Bebas Neue',sans-serif;font-size:24px;color:#fff;letter-spacing:1px;margin-bottom:6px}
+.pkg-price{font-size:28px;font-weight:700;color:var(--gold);margin-bottom:14px}
+.pkg-price span{font-size:13px;font-weight:400;color:var(--muted)}
+.pkg-includes{list-style:none;font-size:13px;color:var(--muted);line-height:2}
+.pkg-includes li::before{content:"✦ ";color:var(--gold);font-size:10px}
+
+/* simple pricing rows */
+.price-rows{display:flex;flex-direction:column;gap:2px;margin-bottom:48px}
+.price-row{display:flex;justify-content:space-between;align-items:center;background:var(--card);padding:16px 24px;border-radius:4px;cursor:pointer;transition:all .2s;border:1px solid transparent}
+.price-row:hover{border-color:var(--gold)}
+.price-row.selected{border-color:var(--gold);background:rgba(201,168,76,0.07)}
+.price-row-name{font-size:15px;font-weight:600;color:#fff}
+.price-row-desc{font-size:12px;color:var(--muted);margin-top:2px}
+.price-row-price{font-size:18px;font-weight:700;color:var(--gold);white-space:nowrap}
+
+/* ── ESTIMATE + QUOTE FORM ── */
+.estimate-wrap{background:#141414;border:1px solid rgba(224,48,48,0.15);border-radius:8px;padding:36px;margin-top:8px}
+.est-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:#fff;letter-spacing:1px;margin-bottom:8px}
+.est-subtitle{font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:28px}
+
+/* client fields */
+.client-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+.client-fields input,.client-fields select,.client-fields textarea{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);color:#fff;font-family:'Inter',sans-serif;font-size:14px;padding:12px 16px;outline:none;transition:border-color .2s;width:100%}
+.client-fields input::placeholder,.client-fields select::placeholder,.client-fields textarea::placeholder{color:rgba(255,255,255,0.3)}
+.client-fields input:focus,.client-fields select:focus,.client-fields textarea:focus{border-color:var(--gold)}
+.client-fields select option{background:#141414;color:#fff}
+.client-fields .full-width{grid-column:1/-1}
+.client-fields textarea{resize:vertical;min-height:80px}
+
+/* addons */
+.addon-title{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.addon-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:24px}
+.addon-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:12px 14px;cursor:pointer;transition:all .2s;user-select:none}
+.addon-item:hover{border-color:var(--gold)}
+.addon-item.checked{border-color:var(--gold);background:rgba(201,168,76,0.1)}
+.addon-check{width:16px;height:16px;border:2px solid rgba(255,255,255,0.3);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s}
+.addon-item.checked .addon-check{background:var(--gold);border-color:var(--gold);color:var(--black);font-size:10px}
+.addon-label{font-size:13px;color:var(--text);line-height:1.3}
+.addon-price{font-size:12px;color:var(--gold);font-weight:600;margin-left:auto;white-space:nowrap}
+
+/* travel */
+.travel-row{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.travel-row label{font-size:13px;color:var(--muted);white-space:nowrap}
+.travel-row select{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);color:#fff;font-family:'Inter',sans-serif;font-size:14px;padding:10px 14px;outline:none;cursor:pointer}
+.travel-row select option{background:#141414}
+
+/* summary */
+.est-summary{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;margin-bottom:24px}
+.est-row{display:flex;justify-content:space-between;font-size:14px;color:var(--muted);padding:5px 0}
+.est-row.total{color:#fff;font-size:18px;font-weight:700;border-top:1px solid rgba(255,255,255,0.1);margin-top:8px;padding-top:12px}
+.est-row.deposit{color:var(--gold);font-size:14px;font-weight:600}
+
+/* submit */
+.quote-submit{width:100%;padding:16px;background:var(--gold);border:none;color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;border-radius:var(--radius);cursor:pointer;transition:background .2s;margin-top:4px}
+.quote-submit:hover{background:var(--gold-dim)}
+.quote-submit:disabled{background:#555;cursor:not-allowed}
+.quote-success{display:none;text-align:center;padding:20px;background:rgba(201,168,76,0.1);border:1px solid var(--gold);border-radius:var(--radius);margin-top:12px}
+.quote-success p{color:var(--gold);font-weight:600;font-size:15px}
+.quote-success small{color:var(--muted);font-size:13px}
+
+/* ── CONTACT ── */
+#contact{background:#111}
+#contact .section-eyebrow{color:rgba(255,255,255,0.5)}
+#contact .section-title{color:#fff}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:40px}
+.contact-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius);padding:28px 24px;text-align:center}
+.contact-card-icon{font-size:28px;margin-bottom:12px}
+.contact-card-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-bottom:8px}
+.contact-card-val{font-size:15px;color:#fff;font-weight:600;text-decoration:none;display:block}
+.contact-card-val:hover{color:var(--gold)}
+.contact-verse{text-align:center;font-size:14px;font-style:italic;color:rgba(255,255,255,0.3);margin-top:32px}
+
+/* ── FOOTER ── */
+footer{background:var(--black);border-top:1px solid rgba(201,168,76,0.1);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--gold);letter-spacing:2px}
+.footer-copy{font-size:12px;color:var(--muted)}
+.footer-socials{display:flex;gap:20px}
+.footer-socials a{font-size:12px;color:var(--muted);text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+.footer-socials a:hover{color:var(--gold)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  #home,section{padding:80px 20px}
+  .about-grid{grid-template-columns:1fr}
+  .client-fields{grid-template-columns:1fr}
+  .client-fields .full-width{grid-column:1}
+  footer{padding:24px 20px}
+  .hero-stats{gap:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#home">TAYLORED MEDIA</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#pricing">Get a Quote</a>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-eyebrow">Louisiana · Faith Forward · Est. 2024</div>
+  <h1 class="hero-h1">We Make Your<br><span>Brand Seen.</span><br>Taylored to You.</h1>
+  <p class="hero-sub">Photography, videography, drone, and social content built for local businesses that are serious about growing.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#pricing">Build Your Quote</a>
+    <a class="btn-outline" href="#services">What We Do</a>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">30+</div><div class="stat-label">Clients Served</div></div>
+    <div><div class="stat-num">6</div><div class="stat-label">Service Areas</div></div>
+    <div><div class="stat-num">2024</div><div class="stat-label">Founded</div></div>
+  </div>
+  <div class="hero-bg-text">TAYLORED</div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span>Photography</span><span class="dot">✦</span>
+    <span>Videography</span><span class="dot">✦</span>
+    <span>Drone</span><span class="dot">✦</span>
+    <span>Social Media Content</span><span class="dot">✦</span>
+    <span>Wedding Films</span><span class="dot">✦</span>
+    <span>Brand Stories</span><span class="dot">✦</span>
+    <span>Photography</span><span class="dot">✦</span>
+    <span>Videography</span><span class="dot">✦</span>
+    <span>Drone</span><span class="dot">✦</span>
+    <span>Social Media Content</span><span class="dot">✦</span>
+    <span>Wedding Films</span><span class="dot">✦</span>
+    <span>Brand Stories</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-eyebrow">What We Do</div>
+  <h2 class="section-title">Every Service<br>You Need</h2>
+  <div class="divider"></div>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-accent" style="background:var(--gold)"></div>
+      <div class="svc-icon">📸</div>
+      <div class="svc-name">Photography</div>
+      <div class="svc-desc">Commercial and brand photography that stops the scroll and makes your business look like it belongs at the top.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-accent" style="background:var(--red)"></div>
+      <div class="svc-icon">🎬</div>
+      <div class="svc-name">Videography</div>
+      <div class="svc-desc">Cinematic brand films, reels, promos, and testimonials. Built to perform on every platform.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-accent" style="background:var(--navy)"></div>
+      <div class="svc-icon">🚁</div>
+      <div class="svc-name">Drone</div>
+      <div class="svc-desc">Aerial photography and video that adds scale and impact. Perspective from above that ground-level can't touch.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-accent" style="background:var(--gold)"></div>
+      <div class="svc-icon">📱</div>
+      <div class="svc-name">Social Media Content</div>
+      <div class="svc-desc">Consistent, on-brand content calendars. Photo, video, reels, and graphics — all done for you, every month.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-accent" style="background:var(--red)"></div>
+      <div class="svc-icon">💍</div>
+      <div class="svc-name">Weddings</div>
+      <div class="svc-desc">Cinematic wedding films that capture the day exactly how it felt. No details missed.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-accent" style="background:var(--navy)"></div>
+      <div class="svc-icon">🎯</div>
+      <div class="svc-name">Brand Stories</div>
+      <div class="svc-desc">Full brand content builds — strategy, shoot, edit. For businesses ready to go all in on their story.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-eyebrow">The Story</div>
+  <h2 class="section-title">Built on Faith.<br>Proven by Work.</h2>
+  <div class="divider"></div>
+  <div class="about-grid">
+    <div class="about-body">
+      <p>Taylored Media didn't start with a business plan or a safety net. It started with a layoff in April 2024, two years of grinding in the marketing world, and a choice — fold, or bet on yourself.</p>
+      <p>I chose to bet on myself. I picked up a camera, started showing up every single day, and built a media company from the ground up in Louisiana. No playbook. Just faith, consistency, and a commitment to doing the work.</p>
+      <p>Thirty-plus clients later, Taylored Media exists to do one thing: make your brand seen. Not just with pretty content — with content that actually moves your business forward.</p>
+      <p><em>"Commit to the Lord whatever you do, and he will establish your plans." — Proverbs 16:3</em></p>
+    </div>
+    <div class="about-stats">
+      <div class="astat"><div class="astat-num">30+</div><div class="astat-label">Clients Served</div></div>
+      <div class="astat"><div class="astat-num">2024</div><div class="astat-label">Year Founded</div></div>
+      <div class="astat"><div class="astat-num">LA</div><div class="astat-label">Louisiana Based</div></div>
+      <div class="astat red"><div class="astat-num">Just Show Up</div><div class="astat-label">Every. Single. Day.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING + QUOTE -->
+<section id="pricing">
+  <div class="section-eyebrow">Pricing</div>
+  <h2 class="section-title">Build Your Quote</h2>
+  <p class="section-sub">Pick your service, choose a package, add any extras — and submit. I'll reach out within 24 hours.</p>
+
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('wedding')">Weddings</button>
+    <button class="tab-btn" onclick="switchTab('video')">Video</button>
+    <button class="tab-btn" onclick="switchTab('photo')">Photo</button>
+    <button class="tab-btn" onclick="switchTab('drone')">Drone</button>
+    <button class="tab-btn" onclick="switchTab('social')">Social Media Content</button>
+    <button class="tab-btn" onclick="switchTab('brand')">Brand Story</button>
+  </div>
+
+  <!-- WEDDING -->
+  <div id="tab-wedding" class="tab-panel active">
+    <div class="pkg-grid">
+      <div class="pkg-card" onclick="selectPkg(this,1200,'Essentials','wedding')">
+        <span class="pkg-selected-badge">✓ Selected</span>
+        <div class="pkg-name">Essentials</div>
+        <div class="pkg-price">$1,200 <span>starting at</span></div>
+        <ul class="pkg-includes">
+          <li>Up to 6 hours coverage</li>
+          <li>Ceremony + reception</li>
+          <li>1 highlight film (3–5 min)</li>
+          <li>Digital delivery</li>
+        </ul>
+      </div>
+      <div class="pkg-card" onclick="selectPkg(this,2200,'Signature','wedding')" style="position:relative">
+        <div class="pkg-badge">Most Popular</div>
+        <span class="pkg-selected-badge">✓ Selected</span>
+        <div class="pkg-name">Signature</div>
+        <div class="pkg-price">$2,200 <span>starting at</span></div>
+        <ul class="pkg-includes">
+          <li>Up to 8 hours coverage</li>
+          <li>Full day ceremony + reception</li>
+          <li>Highlight film + full ceremony edit</li>
+          <li>Drone footage included</li>
+          <li>Digital delivery + private gallery</li>
+        </ul>
+      </div>
+      <div class="pkg-card" onclick="selectPkg(this,3500,'Luxe','wedding')">
+        <span class="pkg-selected-badge">✓ Selected</span>
+        <div class="pkg-name">Luxe</div>
+        <div class="pkg-price">$3,500 <span>starting at</span></div>
+        <ul class="pkg-includes">
+          <li>Full day (up to 10 hrs)</li>
+          <li>Engagement session included</li>
+          <li>Cinematic highlight film</li>
+          <li>Full ceremony + speeches edit</li>
+          <li>Drone + same-day teaser reel</li>
+          <li>Priority delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO -->
+  <div id="tab-video" class="tab-panel">
+    <div class="price-rows">
+      <div class="price-row" onclick="selectRow(this,500,'Brand Promo (30–60 sec)','video')">
+        <div><div class="price-row-name">Brand Promo</div><div class="price-row-desc">30–60 second commercial for social or web</div></div>
+        <div class="price-row-price">From $500</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,800,'Brand Film (2–3 min)','video')">
+        <div><div class="price-row-name">Brand Film</div><div class="price-row-desc">2–3 minute cinematic story piece</div></div>
+        <div class="price-row-price">From $800</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,1200,'Full Production Day','video')">
+        <div><div class="price-row-name">Full Production Day</div><div class="price-row-desc">Full day shoot, multiple deliverables</div></div>
+        <div class="price-row-price">From $1,200</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,250,'Event Coverage','video')">
+        <div><div class="price-row-name">Event Coverage</div><div class="price-row-desc">Up to 4 hours, highlight reel included</div></div>
+        <div class="price-row-price">From $250</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHOTO -->
+  <div id="tab-photo" class="tab-panel">
+    <div class="price-rows">
+      <div class="price-row" onclick="selectRow(this,300,'Business / Headshots','photo')">
+        <div><div class="price-row-name">Business / Headshots</div><div class="price-row-desc">Up to 2 hours, 30+ edited images</div></div>
+        <div class="price-row-price">From $300</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,500,'Brand Session','photo')">
+        <div><div class="price-row-name">Brand Session</div><div class="price-row-desc">Half-day, products + lifestyle, 60+ images</div></div>
+        <div class="price-row-price">From $500</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,900,'Full Commercial Day','photo')">
+        <div><div class="price-row-name">Full Commercial Day</div><div class="price-row-desc">Full day, multiple locations, 100+ images</div></div>
+        <div class="price-row-price">From $900</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,250,'Event Photography','photo')">
+        <div><div class="price-row-name">Event Photography</div><div class="price-row-desc">Up to 3 hours, 50+ edited images</div></div>
+        <div class="price-row-price">From $250</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRONE -->
+  <div id="tab-drone" class="tab-panel">
+    <div class="price-rows">
+      <div class="price-row" onclick="selectRow(this,200,'Drone Only (1 hr)','drone')">
+        <div><div class="price-row-name">Drone Only</div><div class="price-row-desc">1 hour aerial shoot, 10+ edited shots or 1 clip</div></div>
+        <div class="price-row-price">From $200</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,400,'Drone + Ground Combo','drone')">
+        <div><div class="price-row-name">Drone + Ground Combo</div><div class="price-row-desc">2 hours aerial and ground coverage</div></div>
+        <div class="price-row-price">From $400</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,150,'Add-On to Existing Shoot','drone')">
+        <div><div class="price-row-name">Add-On to Existing Shoot</div><div class="price-row-desc">Drone added to any photo or video package</div></div>
+        <div class="price-row-price">From $150</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL -->
+  <div id="tab-social" class="tab-panel">
+    <div class="price-rows">
+      <div class="price-row" onclick="selectRow(this,400,'Starter (1 video, 3 posts/mo)','social')">
+        <div><div class="price-row-name">Starter</div><div class="price-row-desc">1 video + 3 posts/month</div></div>
+        <div class="price-row-price">$400/mo</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,750,'Growth (3–4 videos, 8–10 posts/mo)','social')">
+        <div><div class="price-row-name">Growth</div><div class="price-row-desc">3–4 videos + 8–10 posts/month</div></div>
+        <div class="price-row-price">$750/mo</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,1200,'Full Management','social')">
+        <div><div class="price-row-name">Full Management</div><div class="price-row-desc">Daily content, strategy, engagement + monthly shoot</div></div>
+        <div class="price-row-price">$1,200/mo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND STORY -->
+  <div id="tab-brand" class="tab-panel">
+    <div class="price-rows">
+      <div class="price-row" onclick="selectRow(this,1500,'Brand Starter','brand')">
+        <div><div class="price-row-name">Brand Starter</div><div class="price-row-desc">Half-day shoot, 1 brand film (60 sec), 20 photos</div></div>
+        <div class="price-row-price">From $1,500</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,2800,'Brand Full Build','brand')">
+        <div><div class="price-row-name">Brand Full Build</div><div class="price-row-desc">Full day, brand film (2–3 min), 50 photos, 3 reels</div></div>
+        <div class="price-row-price">From $2,800</div>
+      </div>
+      <div class="price-row" onclick="selectRow(this,4500,'Brand Campaign','brand')">
+        <div><div class="price-row-name">Brand Campaign</div><div class="price-row-desc">Multi-day, full content library, strategy included</div></div>
+        <div class="price-row-price">From $4,500</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTIMATE + QUOTE FORM -->
+  <div class="estimate-wrap" id="estimateSection">
+    <div class="est-title">Your Estimate</div>
+    <div class="est-subtitle">Fill in your info below — I'll reach out within 24 hours to lock in your date.</div>
+
+    <form id="quoteForm">
+      <!-- Hidden fields populated by JS -->
+      <input type="hidden" name="_subject" id="emailSubject" value="New Quote Request — Taylored Media"/>
+      <input type="hidden" name="package_selected" id="hiddenPackage" value="None selected"/>
+      <input type="hidden" name="estimated_total" id="hiddenTotal" value="—"/>
+      <input type="hidden" name="deposit_due" id="hiddenDeposit" value="—"/>
+      <input type="hidden" name="addons_selected" id="hiddenAddons" value="None"/>
+      <input type="hidden" name="travel_zone" id="hiddenTravel" value="Local"/>
+
+      <div class="client-fields">
+        <input type="text" name="full_name" placeholder="Your Name *" required/>
+        <input type="email" name="email" placeholder="Email Address *" required/>
+        <input type="tel" name="phone" placeholder="Phone Number"/>
+        <input type="text" name="business_name" placeholder="Business or Event Name"/>
+        <input type="date" name="event_date" placeholder="Event / Shoot Date" class="full-width"/>
+        <textarea name="details" placeholder="Tell me a little about your project, vision, or anything else I should know..." class="full-width"></textarea>
+      </div>
+
+      <div class="addon-title">Add-Ons</div>
+      <div class="addon-list" id="addonList">
+        <div class="addon-item" onclick="toggleAddon(this,150)">
+          <div class="addon-check"></div>
+          <div class="addon-label">Rush Delivery</div>
+          <div class="addon-price">+$150</div>
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this,200)">
+          <div class="addon-check"></div>
+          <div class="addon-label">Drone Add-On</div>
+          <div class="addon-price">+$200</div>
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this,100)">
+          <div class="addon-check"></div>
+          <div class="addon-label">Extra Edited Reel</div>
+          <div class="addon-price">+$100</div>
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this,250)">
+          <div class="addon-check"></div>
+          <div class="addon-label">Same-Day Highlight</div>
+          <div class="addon-price">+$250</div>
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this,75)">
+          <div class="addon-check"></div>
+          <div class="addon-label">Extra Hour On-Site</div>
+          <div class="addon-price">+$75/hr</div>
+        </div>
+        <div class="addon-item" onclick="toggleAddon(this,125)">
+          <div class="addon-check"></div>
+          <div class="addon-label">Audio On-Site</div>
+          <div class="addon-price">+$125</div>
+        </div>
+      </div>
+
+      <div class="travel-row">
+        <label>Travel Zone:</label>
+        <select id="travelSel" onchange="calc()">
+          <option value="0">Local (within 30 miles) — Free</option>
+          <option value="75">30–60 miles — $75</option>
+          <option value="150">60–100 miles — $150</option>
+          <option value="250">100+ miles — $250+</option>
+        </select>
+      </div>
+
+      <div class="est-summary">
+        <div class="est-row"><span>Package</span><span id="dispBase">—</span></div>
+        <div class="est-row"><span>Add-Ons</span><span id="dispAddons">$0</span></div>
+        <div class="est-row"><span>Travel</span><span id="dispTravel">$0</span></div>
+        <div class="est-row total"><span>Estimated Total</span><span id="dispTotal">—</span></div>
+        <div class="est-row deposit"><span>Deposit to Book (50%)</span><span id="dispDue">—</span></div>
+      </div>
+
+      <button type="submit" class="quote-submit" id="submitBtn">SEND MY QUOTE REQUEST →</button>
+    </form>
+
+    <div class="quote-success" id="quoteSuccess">
+      <p>✦ Quote Request Sent!</p>
+      <small>Thanks — I'll be in touch within 24 hours to confirm your project details.</small>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-eyebrow">Get In Touch</div>
+  <h2 class="section-title">Let's Talk</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-card-icon">📧</div>
+      <div class="contact-card-label">Email</div>
+      <a class="contact-card-val" href="mailto:tayloredmedia6@gmail.com">tayloredmedia6@gmail.com</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">📱</div>
+      <div class="contact-card-label">Phone / Text</div>
+      <a class="contact-card-val" href="tel:+13379188676">337-918-8676</a>
+    </div>
+    <div class="contact-card">
+      <div class="contact-card-icon">🌐</div>
+      <div class="contact-card-label">My Socials</div>
+      <a class="contact-card-val" href="https://instagram.com/tayloredmediavi" target="_blank">Instagram: @tayloredmediavi</a>
+      <a class="contact-card-val" style="margin-top:8px" href="https://www.facebook.com/profile.php?id=61566963426309" target="_blank">Facebook: Taylored Media</a>
+    </div>
+  </div>
+  <p class="contact-verse">"Commit to the Lord whatever you do, and he will establish your plans." — Proverbs 16:3</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">TAYLORED MEDIA</div>
+  <div class="footer-copy">© 2024 Taylored Media · Louisiana</div>
+  <div class="footer-socials">
+    <a href="https://instagram.com/tayloredmediavi" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/profile.php?id=61566963426309" target="_blank">Facebook</a>
+    <a href="mailto:tayloredmedia6@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+// ── STATE ──
+let basePrice = 0;
+let baseName  = '';
+
+// ── TABS ──
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+  // reset selection on tab change
+  basePrice = 0; baseName = '';
+  calc();
+}
+
+// ── PACKAGE CARDS ──
+function selectPkg(el, price, name, tab) {
+  document.querySelectorAll('#tab-' + tab + ' .pkg-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  basePrice = price; baseName = name;
+  calc();
+  document.getElementById('estimateSection').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ── ROW SELECT ──
+function selectRow(el, price, name, tab) {
+  document.querySelectorAll('#tab-' + tab + ' .price-row').forEach(r => r.classList.remove('selected'));
+  el.classList.add('selected');
+  basePrice = price; baseName = name;
+  calc();
+  document.getElementById('estimateSection').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ── ADDONS ──
+function toggleAddon(el, price) {
+  el.classList.toggle('checked');
+  if(el.classList.contains('checked')) el.querySelector('.addon-check').textContent = '✓';
+  else el.querySelector('.addon-check').textContent = '';
+  calc();
+}
+
+// ── CALC ──
+function calc() {
+  let addons = 0;
+  document.querySelectorAll('.addon-item.checked').forEach(el => {
+    addons += parseInt(el.getAttribute('onclick').match(/\d+/)[0]);
+  });
+  const travel = parseInt(document.getElementById('travelSel').value) || 0;
+  const total  = basePrice + addons + travel;
+  const due    = total > 0 ? Math.round(total * 0.5) : 0;
+
+  document.getElementById('dispBase').textContent   = basePrice > 0 ? '$' + basePrice.toLocaleString() : '—';
+  document.getElementById('dispAddons').textContent = '$' + addons.toLocaleString();
+  document.getElementById('dispTravel').textContent = '$' + travel.toLocaleString();
+  document.getElementById('dispTotal').textContent  = total > 0 ? '$' + total.toLocaleString() : '—';
+  document.getElementById('dispDue').textContent    = total > 0 ? '$' + due.toLocaleString() : '—';
+
+  // sync hidden fields
+  const addonLabels = [];
+  document.querySelectorAll('.addon-item.checked').forEach(el => {
+    addonLabels.push(el.querySelector('.addon-label').textContent);
+  });
+  document.getElementById('hiddenPackage').value = baseName || 'None selected';
+  document.getElementById('hiddenTotal').value   = total > 0 ? '$' + total.toLocaleString() : '—';
+  document.getElementById('hiddenDeposit').value = total > 0 ? '$' + due.toLocaleString() : '—';
+  document.getElementById('hiddenAddons').value  = addonLabels.length ? addonLabels.join(', ') : 'None';
+  document.getElementById('hiddenTravel').value  = document.getElementById('travelSel').options[document.getElementById('travelSel').selectedIndex].text;
+  document.getElementById('emailSubject').value  = 'New Quote Request — ' + (baseName || 'General') + ' — Taylored Media';
+}
+
+// ── FORM SUBMIT via FORMSPREE ──
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  calc(); // make sure hidden fields are fresh
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'SENDING...';
+
+  const formData = new FormData(this);
+
+  try {
+    const res = await fetch('https://formspree.io/f/xkoakakq', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      this.style.display = 'none';
+      document.getElementById('quoteSuccess').style.display = 'block';
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'SEND MY QUOTE REQUEST →';
+      alert('Something went wrong. Email me directly at tayloredmedia6@gmail.com');
+    }
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = 'SEND MY QUOTE REQUEST →';
+    alert('Connection error. Email me directly at tayloredmedia6@gmail.com');
+  }
+});
+
+calc();
+</script>
+</body>
+</html>
